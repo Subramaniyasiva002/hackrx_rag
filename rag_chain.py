@@ -77,7 +77,7 @@ def build_rag_chain(pdf_path: str):
     chunks = splitter.split_documents(docs)
 
     # Embeddings & Vector Store
-    embeddings = SentenceTransformerEmbeddings(model_name="intfloat/e5-small-v2")
+    embeddings = SentenceTransformerEmbeddings(model_name="./models1/all-MiniLM-L6-v2")  # Use local model
     vectorstore = Chroma.from_documents(chunks, embedding=embeddings)
     retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
 
@@ -88,4 +88,3 @@ def build_rag_chain(pdf_path: str):
         | (lambda chat_prompt: generate_response(chat_prompt.to_string()))  # FIXED
         | StrOutputParser()
     )
-
