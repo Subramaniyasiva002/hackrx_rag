@@ -5,7 +5,7 @@ import requests
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import SentenceTransformerEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import Chroma
 from langchain.prompts import ChatPromptTemplate
 from langchain.schema.runnable import RunnablePassthrough
@@ -77,7 +77,7 @@ def build_rag_chain(pdf_path: str):
     chunks = splitter.split_documents(docs)
 
     # Embeddings & Vector Store
-    embeddings = SentenceTransformerEmbeddings(model_name="intfloat/e5-small-v2")
+    embeddings = HuggingFaceEmbeddings(model_name="intfloat/e5-small-v2")
     vectorstore = Chroma.from_documents(chunks, embedding=embeddings)
     retriever = vectorstore.as_retriever(search_kwargs={"k": 5})
 
