@@ -1,10 +1,12 @@
 langchain
 langchain-community
 sentence-transformers
-chromadb
 python-dotenv
 requests
 uvicorn
 fastapi
 pypdf
 langchain-huggingface
+faiss-cpu
+psutil
+memory-profiler
