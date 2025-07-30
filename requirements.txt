@@ -7,3 +7,4 @@ requests
 uvicorn
 fastapi
 pypdf
+langchain-huggingface
