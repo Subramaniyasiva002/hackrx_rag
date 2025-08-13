@@ -1,9 +1,11 @@
+fastapi
+uvicorn
+python-dotenv
+requests
 langchain
 langchain-community
 sentence-transformers
-chromadb
-python-dotenv
-requests
-uvicorn
-fastapi
 pypdf
+pydantic
+poppler-utils
+rank_bm25
