@@ -28,7 +28,7 @@ def verify_token(credentials: HTTPAuthorizationCredentials = Depends(bearer_sche
     if credentials.credentials != HACKATHON_API_KEY:
         raise HTTPException(status_code=401, detail="Unauthorized")
 
-@app.post("/hackrx/run", response_model=QueryResponse, dependencies=[Depends(verify_token)])
+@app.post("/api/v1/hackrx/run", response_model=QueryResponse, dependencies=[Depends(verify_token)])
 async def run_query(data: QueryRequest):
     try:
         pdf_path = load_remote_pdf(data.documents)
