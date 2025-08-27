@@ -17,6 +17,11 @@ Huggingface spaces deployment
 ✅ Multi-clause reasoning supported
 ✅Retrieval accuracy is good (tokenization/index persistence challenges on free tier Hugging Face)
 
+## Output
+
+<img width="1920" height="1080" alt="Screenshot (53)" src="https://github.com/user-attachments/assets/b8315d7a-1030-4a0d-9bd4-e73532c2e214" />
+
+
 ## Takeaway
 
 This project gave us hands-on experience combining semantic retrieval + structured reasoning in the health insurance domain. With better tokenization and persistent vector DB, accuracy can significantly improve.
